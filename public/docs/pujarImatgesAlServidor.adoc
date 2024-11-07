@@ -1,0 +1,9 @@
+== Pujar imatges al servidor
+
+Per pujar imatges al servidor, hem de donar permisos a la carpeta on volem guardar els fitxers.
+
+Ho farem amb la seguent comanda:
+[source,shell]
+sudo chmod -R 755 /var/www/html/subhasta10/public/views/images/productes/
+sudo chown -R www-data:www-data /var/www/html/subhasta10/public/views/images/productes/
+sudo systemctl restart apache2

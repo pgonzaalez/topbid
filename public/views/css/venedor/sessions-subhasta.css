@@ -1,0 +1,102 @@
+/* Estilos para los checkboxes */
+.checkbox-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.checkbox-item {
+    width: 50%;
+    padding: 5px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.subhasta-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+.subhasta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 40px);
+    text-align: center;
+}
+
+.subhasta-item h2 {
+    font-size: 18px;
+    width: 100%;
+    height: 40%;
+}
+
+.item-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/*css de la carta del producto*/
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(20% - 30px); /* Ajusta el ancho para que se muestren 3 elementos por fila */
+    text-align: center;
+    position: relative;
+}
+
+.item-header {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    object-fit: cover;
+    max-width: 60%;
+    height: auto;
+}
+
+.price-like-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.price {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}

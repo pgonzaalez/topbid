@@ -1,0 +1,29 @@
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    width: 80%; /* Ajusta este valor según el número de columnas */
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td img {
+    max-width: 100px;
+    height: auto;
+}

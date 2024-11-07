@@ -1,0 +1,121 @@
+.notification-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.notification-button:hover {
+    transform: scale(1.1);
+}
+
+.boton {
+    display: flex;
+    justify-content: left;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.close {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close:hover {
+    background-color: #f28d79; 
+    transform: scale(1.05);
+}
+
+.product-item .button {
+    background-color: #f27979;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-item .button:hover {
+    background-color: #f28d79;
+    transform: scale(1.05);
+}
+
+/* Form container */
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%; 
+    max-width: 1000px; 
+}
+
+.form-container label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="file"],
+.form-container textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="number"]:focus,
+.form-container input[type="file"]:focus,
+.form-container textarea:focus {
+    border-color: #79F2A0;
+    box-shadow: 0 0 5px rgba(121, 242, 160, 0.5);
+}
+
+.form-container textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-container .botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container .button,
+.form-container .close {
+    background: rgb(50, 50, 50);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.form-container .button:hover,
+.form-container .close:hover {
+    background: #79F2A0;
+    transform: scale(1.05);
+}

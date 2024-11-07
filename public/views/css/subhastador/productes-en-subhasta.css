@@ -1,0 +1,85 @@
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+
+.card-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    margin: 5px 0;
+}
+
+.card-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-info form label {
+    font-weight: bold;
+}
+
+.card-info form select,
+.card-info form input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.card-info form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+    height: auto;
+}
+
+.openModal {
+    width: 200px;
+    height: auto;
+}
+
+.card-image {
+    flex: 0 0 250px;
+}
+
+.product-image {
+    width: 90%;
+    height: 90%;
+}

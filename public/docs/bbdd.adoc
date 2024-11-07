@@ -1,0 +1,10 @@
+== BBDD
+
+**PRODUCTES**([underline]##id_producte##, nom, descripcio_curta, descripcio_llarga, imatge, preu, observacions, status, usuari_id) +
+**SUBHASTES**([underline]##id_subhasta##, nom, date_hora, lloc, descripcio, percentatge, inici) +
+**USUARIS**([underline]##id_usuari##, username, contrasenya, dni, rol) +
+**PRODUCT_LIKES**([underline]##id##, product_id, user_id) +
+**SUBHASTA_PRODUCTE**([underline]##id_producte##, id_subhasta, preu_final, comprador_id) +
+**NOTIFICACIONS**([underline]##id_notificacio##, producte_id, id_usuari, data, llegida) +
+**MISSATGES**([underline]##id_missatge##, emisor, receptor, producte_id, missatge, data, llegit) +
+**COMPRES**([underline]##id_compra##, id_subhasta, id_producte, comprador_id, propietari_id, preu_inicial, preu_final, guany_comprador, guany_propietari, total_guany)

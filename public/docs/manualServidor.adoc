@@ -1,0 +1,160 @@
+= Manual d'instal·lació del servidor
+
+* Sistema operatiu: Debian 12 sense interfície gràfica.
+** Usuari: isard
+** Contrasenya: pirineus
+
+== 1 Actualitzar el sistema
+Abans de començar amb la instal·lació de les eines necessàries per al servidor, és important actualitzar el sistema. Per a això, executarem la següent comanda:
+[source, shell]
+sudo apt update
+
+== 2 Instal·lar el servidor web Apache i OpenSSH
+Per a la instal·lació del servidor web Apache, executarem la següent comanda:
+[source, shell]
+sudo apt install apache2
+
+Per a la instal·lació de OpenSSH, executarem la següent comanda:
+[source, shell]
+sudo apt install openssh-server
+
+== 3 Instal·lar PHP 8.3.x
+Per a la instal·lació de PHP 8.3.x, executarem les següents comandes:
+[source, shell]
+sudo apt install php libapache2-mod-php
+
+== 4 Instal·lar MySQL
+Per a la instal·lació de Git, executarem la següent comanda:
+[source, shell]
+sudo apt install default-mysql-server
+
+== 5 Instal·lar Git
+Per a la instal·lació de Git, executarem la següent comanda:
+[source, shell]
+sudo apt install git  
+
+== 6 Configuracio de Xarxa
+Editeu el fitxer de configuració de xarxa:
+[source, shell]
+sudo nano /etc/network/interfaces
+
+Afegiu les següents línies:
+[source, shell]
+auto enp2s0
+auto enp3s0
+allow-hotplug enp1s0
+iface enp1s0 inet dhcp
+iface enp2s0 inet dhcp
+iface enp3s0 inet static
+        address 192.168.50.xxx 
+        netmask 255.255.255.0
+
+Amb Control+O guardem el fitxer i amb Control+X sortim de l'editor de text.
+
+Substituïu 192.168.50.xxx amb la IP assignada.
+
+Reiniciar la màquina:
+[source, shell]
+sudo reboot
+
+Comprovar la configuració IP
+[source, shell]
+ip a
+
+== 7 Instalacio WireGuard a Windows
+Descarregar el fitxer d'instal·lació de WireGuard per a Windows des del següent enllaç:
+
+https://download.wireguard.com/windows-client/wireguard-installer.exe
+
+Executar el fitxer descarregat i seguir les instruccions de la instal·lació.
+
+Una vegada finalitzada la instal·lació, obrir l'aplicació i importar el fitxer de configuració de WireGuard.
+
+Per a importar el fitxer de configuració, anar a "Add Tunnel" i seleccionar el fitxer de configuració descarregat.
+
+Finalment, clickar al botó activar per connectar-se a la VPN de WireGuard.
+
+Fer ping amb la maquina per comprovar la connexió.
+[source, shell]
+ping 10.XX.XX.XX
+
+== 8 Connexió a la VPN
+Obrir el CMD de Windows i executar la següent comanda:
+[source, shell]
+ssh isard@10.XX.XX.XX
+
+Introduir la contrasenya de l'usuari isard per connectar-se al servidor.
+
+== 9 Configuracio Ubuntu client
+Editeu el fitxer de configuració de xarxa:
+[source, shell]
+sudo nano /etc/netplan/00-installer-config.yaml
+
+Afegiu les següents línies:
+[source, shell]
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp1s0:
+      dhcp4: yes
+    enp2s0:
+      dhcp4: yes
+    enp3s0:
+      addresses: [192.168.50.xxx/24]
+      gateway4:
+
+Amb Control+O guardem el fitxer i amb Control+X sortim de l'editor de text.
+Reiniciar la màquina:
+[source, shell]
+sudo reboot
+
+Comprovar fent ping amb el servidor:
+[source, shell]
+ping 192.168.50.xxx
+
+Per accedir desde la teva maquina Windows la IP es la que comença per 10.XX.XX.XX
+Per accedir desde el client Ubuntu la IP es la que comença per 192.168.50.xxx
+
+
+== 10 Depolyment de la aplicació
+Per a la instal·lació de la aplicació, executarem les següents comandes:
+[source, shell]
+cd /var/www/html
+sudo git clone (enllaç del repositori)
+
+== 11 Instalacio BD
+Abans de fer la instal·lació de la aplicació, caldrà configurar la base de dades.
+Per fer-ho seguirem el manual d'instalacio de la base de dades.
+link:https://gitlab.com/subhasta/subhasta10/-/blob/develop/public/docs/manualCreacionDB.adoc?ref_type=heads[Manual d'instalació de la base de dades,manualCreacionDB.adoc]
+
+== 12 Configuració de la base de dades
+Per a la configuració de la base de dades, executarem les següents comandes:
+[source, shell]
+sudo mysql -u root -p
+source /var/www/html/subhasta10/public/Database/database.sql
+
+== 13 Configuració de l'apache
+Per a la configuració de l'apache, executarem les següents comandes:
+[source, shell]
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+Modificar les següents línies:
+  DocumentRoot /var/www/html/subhasta10/public/
+
+Amb Control+O guardem el fitxer i amb Control+X sortim de l'editor de text.
+
+== 14 Configuracio per pujar imatges al servidor
+Abans de reiniciar el servei d'apache, caldrà donar permisos per poder pujar a las imatges:
+link:https://gitlab.com/subhasta/subhasta10/-/blob/develop/public/docs/pujarImatgesAlServidor.adoc?ref_type=heads[Manual per ,pujarImatgesAlServidor.adoc]
+
+
+Reiniciar el servei d'apache:
+[source, shell]
+sudo systemctl restart apache2
+
+== 15 Comprovacio de la aplicació
+Per comprovar que la aplicació s'ha instal·lat correctament, obrirem un navegador web i accedirem a la següent URL:
+Si accedim al servidor desde Windows: http://10.XX.XX.XX
+Si accedim al servidor desde Ubuntu: http://192.168.50.xxx
+

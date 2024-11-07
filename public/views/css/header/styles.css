@@ -1,0 +1,243 @@
+/* public/css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+body {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+
+}
+
+main {
+    flex: 1;
+}
+
+
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EEEEEE;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+p {
+    padding: 10px;
+}
+
+.button {
+    background-color: #79F2A0;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #79F2A0;
+}
+
+/*css del buscador*/
+.buscador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buscador h1 {
+    font-size: 40px;
+    color: black;
+    margin-right: 20px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 400px;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    transition: border-color 0.3s;
+}
+
+.search-container button {
+    background-color: #79F2A0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+}
+
+.search-container button img {
+    height: 20px;
+    width: auto;
+}
+
+.search-container button:hover {
+    background-color: #049c34;
+}
+
+
+.search-container select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    outline: none;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+/* Estilos para las opciones del select */
+.search-container select option {
+    padding: 30px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+/*css de la carta del producto*/
+.product-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(30% - 40px);
+    text-align: center;
+    position: relative;
+}
+
+.item-header {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.product-image {
+    object-fit: cover;
+    max-width: 60%;
+    height: auto;
+}
+
+.price-like-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.like-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.megusta {
+    display: flex;
+    align-items: center;
+}
+
+.megusta img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.megusta img:hover {
+    transform: scale(1.2);
+}
+
+.megusta span {
+    font-size: 14px;
+    color: #333;
+}
+
+/*Css de la paginació*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination-link {
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-link:hover {
+    background-color: #79F2A0;
+    color: white;
+}
+
+.pagination-link.active {
+    background-color: #79F2A0;
+    color: white;
+    border-color: #79F2A0;
+}

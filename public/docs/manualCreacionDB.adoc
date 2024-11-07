@@ -1,0 +1,33 @@
+== Creació de la base de dades i taules
+
+Una vegada ja tenim l'instalació feta del servidor i de la base de dades, procedirem en la seva creació.
+
+Recomanem fer-ho desde la teva propia maquina, ja que d'aquesta manera accedint desde la vpn podrem copiar i enganxar els comandaments necesaris.
+
+Primer de tot ens connectarem a la base de dades amb l'usuari root:
+
+Abans hem d'instalar la bbd hem d'instalar un altre paquet
+
+[source,sql]
+sudo wget -qO /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php.list
+sudo apt update
+sudo apt install -y php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mysql php8.2-pdo
+sudo a2enmod php8.2
+sudo systemctl restart apache2
+
+
+Per començar ens fiquem en:
+[source,sql]
+sudo mysql -u root -p
+
+Creem la base de dades amb la seguent comanda:
+[source,sql]
+source /var/www/html/subhasta10/public/database/database.sql
+
+Per finalitzar creem un usuari i li afegim els permisos
+[source,sql]
+CREATE USER 'subhastador'@'localhost' IDENTIFIED BY 'C@pernic1234';
+GRANT ALL PRIVILEGES ON subhasta.* TO 'subhastador'@'localhost' IDENTIFIED BY 'C@pernic1234';
+FLUSH PRIVILEGES;
+

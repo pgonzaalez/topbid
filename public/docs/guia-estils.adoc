@@ -1,0 +1,73 @@
+= Sprint 1
+
+== R01: Definir guia d’estils de l’aplicació
+
+* Colors
+** Utilitzarem el color blanc pels backgrounds.
+** El verd serà el color principal de l’aplicació i el color del logo de la nostre pagina web, será el identificatiu. #79F2A0
+** Per acabar, un gris fluix pels footers i headers. 
+= Sprint 1
+
+
+== R01: Definir guia d’estils de l’aplicació
+
+* Colors
+** Utilitzarem el color blanc pels backgrounds. #FFFFFF
+** El verd serà el color principal de l’aplicació.   #79F2A0
+** El color verd fos per quan volem destacar alguna cosa. #2E7D32
+** Un gris fluix pels footers i headers. #EEEEEE
+** El gris fosc serán per icones #272D2D
+
+
+image::../images/paletaColors.png[50]
+
+
+=== Font
+* Font-family: 'Poppins', sans-serif
+  La font Poppins és una font sans-serif que ofereix una lectura còmoda i una aparença moderna.
+
+*   Títol 1 (H1) Font-size: 40px
+**  Aquest títol principal ha de destacar, però sense ser massa gran per evitar sobrecarregar la pàgina.
+
+* Títol 2 (H2)
+ ** Font-size: 32px
+    Ideal per subtítols que necessiten destacar però mantenint una jerarquia més baixa que l’H1.
+
+* Títol 3 (H3)
+ **  Font-size: 24px
+    S'utilitza per seccions secundàries, permet una lectura còmoda i segueix destacant de manera equilibrada.
+
+**  Títol 4 (H4)
+  * Font-size: 20px
+    Perfecte per subtítols menors, com seccions dins d'una pàgina.
+
+*  Cos del text (paràgraf)
+  ** Font-size: 16px
+    Aquesta mida és l’estàndard per a paràgrafs, ja que facilita la lectura prolongada sense forçar la vista.
+
+*  Cites
+ **  Font-size: 18px
+    Lleugerament més gran que el cos del text per destacar les cites i oferir una millor visibilitat.
+
+* Paraules ressaltades
+  ** Font-size: 16px (com el cos del text)
+    Manté la coherència amb el text principal, però es destaca amb pes o color.
+
+* Altres
+ ** Font-size: 14px
+    Lleugerament més petit que el cos del text, ideal per notes a peu de pàgina o textos secundaris.
+
+* La font sempre serà Poppins.
+
+=== Iconografía
+EL color de la mayoria de iconos sera de color negra.
+Como por ejemplo el simbolo de corazón, campana de notificaciones, log in...
+
+En todos aquellos lugares donde haya un fonde negro, los iconos pasaran a ser de color verde, que tenemos predefinido.
+
+Todas los iconos que esten dentro de un nav tendran el mismo tamaño.
+
+Todos los iconos seran un boton que al clicarlos te llevaran a una pagina especifica.
+
+=== Botons
+
